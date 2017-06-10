@@ -1,0 +1,33 @@
+apply plugin: 'cpp'
+apply plugin: 'google-test-test-suite'
+
+model {
+
+	components {
+		main(NativeLibrarySpec) {
+			baseName "$project.name"
+		}
+	}
+
+	testSuites {
+		mainTest(GoogleTestTestSuiteSpec) {
+			testing $.components.main
+		}
+	}
+
+	binaries {
+		withType(GoogleTestTestSuiteBinarySpec) {
+			cppCompiler.args '-pthread'
+			linker.args '-lgtest', '-pthread'
+		}
+	}
+}
+
+task test {
+	dependsOn 'cleanRunMainTestGoogleTestExe'
+	dependsOn 'runMainTestGoogleTestExe'
+}
+
+tasks.withType(RunTestExecutable) {
+	args '--gtest_output=xml:test_detail.xml'
+}
