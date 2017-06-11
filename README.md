@@ -1,6 +1,6 @@
 # twenty-forty-eight
 
-![Build Status](https://api.travis-ci.org/geeknz/twenty-forty-eight.svg)
+[![Build Status](https://travis-ci.org/geeknz/twenty-forty-eight.svg)](https://travis-ci.org/geeknz/twenty-forty-eight)
 
 ## Installing Google Test
 
