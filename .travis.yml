@@ -1,0 +1,11 @@
+language: cpp
+
+script: ./gradlew --no-daemon check
+
+before_install:
+  - sudo apt-get install libgtest-dev
+  - cmake -DBUILD_SHARED_LIBS=ON /usr/src/gtest
+  - make
+  - sudo mv libgtest.so /usr/lib
+  - sudo mv libgtest_main.so /usr/lib
+  - git clean -fxd
