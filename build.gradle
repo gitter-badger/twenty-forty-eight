@@ -18,7 +18,7 @@ model {
 	binaries {
 		withType(GoogleTestTestSuiteBinarySpec) {
 			cppCompiler.args '-pthread'
-			linker.args '-lgtest', '-pthread'
+			linker.args '-lgtest', '-lgtest_main', '-pthread'
 		}
 	}
 }
