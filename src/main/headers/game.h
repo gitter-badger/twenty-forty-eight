@@ -5,8 +5,10 @@
 
 class Game {
 	public:
-		Game(unsigned int size);
+		Game(unsigned int);
 		~Game();
+		static Game* fromArray(unsigned int*);
+		unsigned int* toArray();
 		void up();
 	private:
 		unsigned int _size;

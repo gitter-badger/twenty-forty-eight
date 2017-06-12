@@ -10,6 +10,42 @@ Game::~Game() {
 	delete _grid;
 }
 
+Game* Game::fromArray(unsigned int* array) {
+
+	unsigned int size = array[0];
+
+	Game* game = new Game(size);
+
+	for (unsigned int y = 0; y < size; ++y)
+	{
+		for (unsigned int x = 0; x < size; ++x)
+		{
+			unsigned int value = array[1 + x + size * y];
+			game->_grid->set(x, y, value);
+		}
+	}
+
+	return game;
+}
+
+unsigned int* Game::toArray() {
+
+	unsigned int* array = new unsigned int[1 + _size * _size];
+
+	array[0] = _size;
+
+	for (unsigned int y = 0; y < _size; ++y)
+	{
+		for (unsigned int x = 0; x < _size; ++x)
+		{
+			unsigned int value = _grid->get(x, y);
+			array[1 + x + _size * y] = value;
+		}
+	}
+
+	return array;
+}
+
 void Game::up() {
 
 	for (unsigned int x = 0; x < _size; ++x) {

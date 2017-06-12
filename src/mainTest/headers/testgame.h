@@ -4,11 +4,6 @@
 #include "game.h"
 #include <gtest/gtest.h>
 
-class GameTest : public ::testing::Test {
-	protected:
-		virtual void SetUp();
-		virtual void TearDown();
-		Game* _game;	
-};
+class GameTest : public ::testing::Test {};
 
 #endif
