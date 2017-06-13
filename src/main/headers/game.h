@@ -10,6 +10,7 @@ class Game {
 		static Game* fromArray(unsigned int*);
 		unsigned int* toArray();
 		void up();
+		void down();
 	private:
 		unsigned int _size;
 		Grid* _grid;
