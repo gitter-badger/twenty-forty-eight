@@ -11,6 +11,7 @@ class Game {
 		unsigned int* toArray();
 		void up();
 		void down();
+		void left();
 	private:
 		unsigned int _size;
 		Grid* _grid;
