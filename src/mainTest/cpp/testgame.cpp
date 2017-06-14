@@ -104,6 +104,40 @@ TEST_F(GameTest, TestLeft) {
 	delete [] result;
 }
 
+TEST_F(GameTest, TestRight) {
+
+	unsigned int* initialState = new unsigned int[17] {
+		4,
+		1, 0, 0, 0,
+		2, 2, 2, 0,
+		2, 2, 2, 2,
+		3, 0, 0, 3
+	};
+
+	unsigned int* expected = new unsigned int[17] {
+		4,
+		0, 0, 0, 1,
+		0, 0, 2, 3,
+		0, 0, 3, 3,
+		0, 0, 0, 4
+	};
+
+	Game* game = Game::fromArray(initialState);
+	game->right();
+
+	unsigned int* result = game->toArray();
+
+	for (int i = 0; i < 17; ++i)
+	{
+		ASSERT_EQ(expected[i], result[i]);
+	}
+
+	delete game;
+	delete [] expected;
+	delete [] initialState;
+	delete [] result;
+}
+
 TEST_F(GameTest, TestToFromArray) {
 
 	unsigned int* expected = new unsigned int[17] {

@@ -12,6 +12,7 @@ class Game {
 		void up();
 		void down();
 		void left();
+		void right();
 	private:
 		unsigned int _size;
 		Grid* _grid;

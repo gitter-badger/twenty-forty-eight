@@ -168,3 +168,44 @@ void Game::left() {
 		delete [] modified;
 	}
 }
+
+void Game::right() {
+
+	for (unsigned int y = 0; y < _size; ++y) {
+
+		bool* modified = new bool[_size]();
+
+		for (int x = _size - 1; x >= 0; --x) {
+
+			unsigned int value = _grid->get(x, y);
+
+			if (!value) continue;
+
+			unsigned int x1 = x;
+			unsigned int value1 = value;
+
+			for (unsigned int i = x1; i < _size; ++i)
+			{
+				if (modified[i]) break;
+
+				value1 = _grid->get(i, y);
+
+				if (value1 && value != value1) break;
+
+				x1 = i;
+			}
+
+			if (x == x1) continue;
+
+			if (value == value1) {
+				++value;
+				modified[x1] = true;
+			}
+
+			_grid->set(x1, y, value);
+			_grid->set(x, y, 0);
+		}
+
+		delete [] modified;
+	}
+}
