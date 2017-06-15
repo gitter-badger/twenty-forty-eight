@@ -74,6 +74,8 @@ void Game::up() {
 
 			if (y == y1) continue;
 
+			value1 = _grid->get(x, y1);
+
 			if (value == value1) {
 				++value;
 				modified[y1] = true;
@@ -114,6 +116,8 @@ void Game::down() {
 			}
 
 			if (y == y1) continue;
+
+			value1 = _grid->get(x, y1);
 
 			if (value == value1) {
 				++value;
@@ -156,6 +160,8 @@ void Game::left() {
 
 			if (x == x1) continue;
 
+			value1 = _grid->get(x1, y);
+
 			if (value == value1) {
 				++value;
 				modified[x1] = true;
@@ -196,6 +202,8 @@ void Game::right() {
 			}
 
 			if (x == x1) continue;
+
+			value1 = _grid->get(x1, y);
 
 			if (value == value1) {
 				++value;
