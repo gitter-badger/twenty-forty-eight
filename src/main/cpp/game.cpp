@@ -3,6 +3,7 @@
 
 Game::Game(unsigned int size) {
 	_size = size;
+	_score = 0;
 	_grid = new Grid(_size);
 }
 
@@ -15,12 +16,13 @@ Game* Game::fromArray(unsigned int* array) {
 	unsigned int size = array[0];
 
 	Game* game = new Game(size);
+	game->_score = array[1];
 
 	for (unsigned int y = 0; y < size; ++y)
 	{
 		for (unsigned int x = 0; x < size; ++x)
 		{
-			unsigned int value = array[1 + x + size * y];
+			unsigned int value = array[2 + x + size * y];
 			game->_grid->set(x, y, value);
 		}
 	}
@@ -33,13 +35,14 @@ unsigned int* Game::toArray() {
 	unsigned int* array = new unsigned int[1 + _size * _size];
 
 	array[0] = _size;
+	array[1] = _score;
 
 	for (unsigned int y = 0; y < _size; ++y)
 	{
 		for (unsigned int x = 0; x < _size; ++x)
 		{
 			unsigned int value = _grid->get(x, y);
-			array[1 + x + _size * y] = value;
+			array[2 + x + _size * y] = value;
 		}
 	}
 
@@ -77,7 +80,7 @@ void Game::up() {
 			value1 = _grid->get(x, y1);
 
 			if (value == value1) {
-				++value;
+				_score = _score + (1 << ++value);
 				modified[y1] = true;
 			}
 
@@ -120,7 +123,7 @@ void Game::down() {
 			value1 = _grid->get(x, y1);
 
 			if (value == value1) {
-				++value;
+				_score = _score + (1 << ++value);
 				modified[y1] = true;
 			}
 
@@ -163,7 +166,7 @@ void Game::left() {
 			value1 = _grid->get(x1, y);
 
 			if (value == value1) {
-				++value;
+				_score = _score + (1 << ++value);
 				modified[x1] = true;
 			}
 
@@ -206,7 +209,7 @@ void Game::right() {
 			value1 = _grid->get(x1, y);
 
 			if (value == value1) {
-				++value;
+				_score = _score + (1 << ++value);
 				modified[x1] = true;
 			}
 

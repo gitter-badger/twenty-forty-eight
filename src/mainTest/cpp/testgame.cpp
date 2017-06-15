@@ -4,16 +4,16 @@
 
 TEST_F(GameTest, TestUpOne) {
 
-	unsigned int* initialState = new unsigned int[17] {
-		4,
+	unsigned int* initialState = new unsigned int[18] {
+		4, 0,
 		0, 0, 2, 3,
 		0, 2, 2, 0,
 		0, 2, 2, 0,
 		1, 2, 2, 3
 	};
 
-	unsigned int* expected = new unsigned int[17] {
-		4,
+	unsigned int* expected = new unsigned int[18] {
+		4, 40,
 		1, 3, 3, 4,
 		0, 2, 3, 0,
 		0, 0, 0, 0,
@@ -25,7 +25,7 @@ TEST_F(GameTest, TestUpOne) {
 
 	unsigned int* result = game->toArray();
 
-	for (int i = 0; i < 17; ++i)
+	for (int i = 0; i < 18; ++i)
 	{
 		ASSERT_EQ(expected[i], result[i]);
 	}
@@ -38,16 +38,16 @@ TEST_F(GameTest, TestUpOne) {
 
 TEST_F(GameTest, TestUpTwo) {
 
-	unsigned int* initialState = new unsigned int[17] {
-		4,
+	unsigned int* initialState = new unsigned int[18] {
+		4, 40,
 		0, 0, 0, 4,
 		0, 0, 3, 3,
 		0, 0, 2, 3,
 		0, 0, 0, 1
 	};
 
-	unsigned int* expected = new unsigned int[17] {
-		4,
+	unsigned int* expected = new unsigned int[18] {
+		4, 56,
 		0, 0, 3, 4,
 		0, 0, 2, 4,
 		0, 0, 0, 1,
@@ -59,7 +59,7 @@ TEST_F(GameTest, TestUpTwo) {
 
 	unsigned int* result = game->toArray();
 
-	for (int i = 0; i < 17; ++i)
+	for (int i = 0; i < 18; ++i)
 	{
 		ASSERT_EQ(expected[i], result[i]);
 	}
@@ -72,16 +72,16 @@ TEST_F(GameTest, TestUpTwo) {
 
 TEST_F(GameTest, TestDownOne) {
 
-	unsigned int* initialState = new unsigned int[17] {
-		4,
+	unsigned int* initialState = new unsigned int[18] {
+		4, 0,
 		1, 2, 2, 3,
 		0, 2, 2, 0,
 		0, 2, 2, 0,
 		0, 0, 2, 3
 	};
 
-	unsigned int* expected = new unsigned int[17] {
-		4,
+	unsigned int* expected = new unsigned int[18] {
+		4, 40,
 		0, 0, 0, 0,
 		0, 0, 0, 0,
 		0, 2, 3, 0,
@@ -93,7 +93,7 @@ TEST_F(GameTest, TestDownOne) {
 
 	unsigned int* result = game->toArray();
 
-	for (int i = 0; i < 17; ++i)
+	for (int i = 0; i < 18; ++i)
 	{
 		ASSERT_EQ(expected[i], result[i]);
 	}
@@ -106,16 +106,16 @@ TEST_F(GameTest, TestDownOne) {
 
 TEST_F(GameTest, TestDownTwo) {
 
-	unsigned int* initialState = new unsigned int[17] {
-		4,
+	unsigned int* initialState = new unsigned int[18] {
+		4, 40,
 		0, 0, 0, 1,
 		0, 0, 2, 3,
 		0, 0, 3, 3,
 		0, 0, 0, 4
 	};
 
-	unsigned int* expected = new unsigned int[17] {
-		4,
+	unsigned int* expected = new unsigned int[18] {
+		4, 56,
 		0, 0, 0, 0,
 		0, 0, 0, 1,
 		0, 0, 2, 4,
@@ -127,7 +127,7 @@ TEST_F(GameTest, TestDownTwo) {
 
 	unsigned int* result = game->toArray();
 
-	for (int i = 0; i < 17; ++i)
+	for (int i = 0; i < 18; ++i)
 	{
 		ASSERT_EQ(expected[i], result[i]);
 	}
@@ -140,16 +140,16 @@ TEST_F(GameTest, TestDownTwo) {
 
 TEST_F(GameTest, TestLeftOne) {
 
-	unsigned int* initialState = new unsigned int[17] {
-		4,
+	unsigned int* initialState = new unsigned int[18] {
+		4, 0,
 		0, 0, 0, 1,
 		0, 2, 2, 2,
 		2, 2, 2, 2,
 		3, 0, 0, 3
 	};
 
-	unsigned int* expected = new unsigned int[17] {
-		4,
+	unsigned int* expected = new unsigned int[18] {
+		4, 40,
 		1, 0, 0, 0,
 		3, 2, 0, 0,
 		3, 3, 0, 0,
@@ -161,7 +161,7 @@ TEST_F(GameTest, TestLeftOne) {
 
 	unsigned int* result = game->toArray();
 
-	for (int i = 0; i < 17; ++i)
+	for (int i = 0; i < 18; ++i)
 	{
 		ASSERT_EQ(expected[i], result[i]);
 	}
@@ -174,16 +174,16 @@ TEST_F(GameTest, TestLeftOne) {
 
 TEST_F(GameTest, TestLeftTwo) {
 
-	unsigned int* initialState = new unsigned int[17] {
-		4,
+	unsigned int* initialState = new unsigned int[18] {
+		4, 40,
 		4, 3, 3, 1,
 		0, 3, 2, 0,
 		0, 0, 0, 0,
 		0, 0, 0, 0
 	};
 
-	unsigned int* expected = new unsigned int[17] {
-		4,
+	unsigned int* expected = new unsigned int[18] {
+		4, 56,
 		4, 4, 1, 0,
 		3, 2, 0, 0,
 		0, 0, 0, 0,
@@ -195,7 +195,7 @@ TEST_F(GameTest, TestLeftTwo) {
 
 	unsigned int* result = game->toArray();
 
-	for (int i = 0; i < 17; ++i)
+	for (int i = 0; i < 18; ++i)
 	{
 		ASSERT_EQ(expected[i], result[i]);
 	}
@@ -208,16 +208,16 @@ TEST_F(GameTest, TestLeftTwo) {
 
 TEST_F(GameTest, TestRightOne) {
 
-	unsigned int* initialState = new unsigned int[17] {
-		4,
+	unsigned int* initialState = new unsigned int[18] {
+		4, 0,
 		1, 0, 0, 0,
 		2, 2, 2, 0,
 		2, 2, 2, 2,
 		3, 0, 0, 3
 	};
 
-	unsigned int* expected = new unsigned int[17] {
-		4,
+	unsigned int* expected = new unsigned int[18] {
+		4, 40,
 		0, 0, 0, 1,
 		0, 0, 2, 3,
 		0, 0, 3, 3,
@@ -229,7 +229,7 @@ TEST_F(GameTest, TestRightOne) {
 
 	unsigned int* result = game->toArray();
 
-	for (int i = 0; i < 17; ++i)
+	for (int i = 0; i < 18; ++i)
 	{
 		ASSERT_EQ(expected[i], result[i]);
 	}
@@ -242,16 +242,16 @@ TEST_F(GameTest, TestRightOne) {
 
 TEST_F(GameTest, TestRightTwo) {
 
-	unsigned int* initialState = new unsigned int[17] {
-		4,
+	unsigned int* initialState = new unsigned int[18] {
+		4, 40,
 		1, 3, 3, 4,
 		0, 2, 3, 0,
 		0, 0, 0, 0,
 		0, 0, 0, 0
 	};
 
-	unsigned int* expected = new unsigned int[17] {
-		4,
+	unsigned int* expected = new unsigned int[18] {
+		4, 56,
 		0, 1, 4, 4,
 		0, 0, 2, 3,
 		0, 0, 0, 0,
@@ -263,7 +263,7 @@ TEST_F(GameTest, TestRightTwo) {
 
 	unsigned int* result = game->toArray();
 
-	for (int i = 0; i < 17; ++i)
+	for (int i = 0; i < 18; ++i)
 	{
 		ASSERT_EQ(expected[i], result[i]);
 	}
@@ -276,8 +276,8 @@ TEST_F(GameTest, TestRightTwo) {
 
 TEST_F(GameTest, TestToFromArray) {
 
-	unsigned int* expected = new unsigned int[17] {
-		4,
+	unsigned int* expected = new unsigned int[18] {
+		4, 0,
 		1, 0, 0, 0,
 		0, 2, 0, 0,
 		0, 0, 3, 0,
@@ -287,7 +287,7 @@ TEST_F(GameTest, TestToFromArray) {
 	Game* game = Game::fromArray(expected);
 	unsigned int* array = game->toArray();
 
-	for (int i = 0; i < 17; ++i)
+	for (int i = 0; i < 18; ++i)
 	{
 		ASSERT_EQ(expected[i], array[i]);
 	}

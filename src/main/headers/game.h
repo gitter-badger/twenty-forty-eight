@@ -15,6 +15,7 @@ class Game {
 		void right();
 	private:
 		unsigned int _size;
+		unsigned int _score;
 		Grid* _grid;
 };
 
