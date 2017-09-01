@@ -1,5 +1,7 @@
 # twenty-forty-eight
 
+[![Join the chat at https://gitter.im/twenty-forty-eight/Lobby](https://badges.gitter.im/twenty-forty-eight/Lobby.svg)](https://gitter.im/twenty-forty-eight/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Build Status](https://travis-ci.org/geeknz/twenty-forty-eight.svg)](https://travis-ci.org/geeknz/twenty-forty-eight)
 
 ## Installing Google Test
